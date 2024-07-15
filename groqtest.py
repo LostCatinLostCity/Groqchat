@@ -21,8 +21,7 @@ import os
 
 load_dotenv()
 
-groq_api_key = os.getenv("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")
-
+groq_api_key = "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"
 def main():
 
     st.title("ThinkHealth")
