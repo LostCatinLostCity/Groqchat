@@ -40,7 +40,9 @@ def get_supportive_response():
     ]
     support_message = "Please remember that I'm an AI chatbot and not a substitute for professional help."
     recommendation = "Please contact the national helpline if things get too bad."
-    tips_message = "Here are some things you can try to help you feel better:\n" + "\n".join(tips)
+    selected_tips = random.sample(tips, min(5, len(tips)))
+    tips_message = "Here are some things you can try to help you feel better:\n" + "\n".join(selected_tips)
+    
     return f"{support_message}\n{recommendation}\n\n{tips_message}"
 
 def main():
