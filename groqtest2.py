@@ -147,7 +147,7 @@ def get_supportive_response():
     recommendation = "Please contact the national helpline if things get too bad."
     
     # Randomly choose 5 tips
-    selected_tips = random.sample(tips, min(5, len(tips)))
+    selected_tips = random.sample(tips, min(10, len(tips)))
     tips_message = "Here are some things you can try to help you feel better:\n" + "\n".join(selected_tips)
     
     return f"{support_message}\n{recommendation}\n\n{tips_message}"
