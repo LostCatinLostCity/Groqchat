@@ -147,7 +147,7 @@ def get_supportive_response():
 def main():
     st.title("ThinkHealth")
 
-    model = 'mixtral-8x7b-32768'
+    model = 'gemma2-9b-it'
     conversational_memory_length = 5
 
     memory = ConversationBufferWindowMemory(k=conversational_memory_length)
