@@ -75,7 +75,7 @@ def main():
         if detect_emotional_query(user_question):
             supportive_response = get_supportive_response()
             model_response = conversation(user_question)['response']
-            combined_response = f"{supportive_response}\n\nModel Response:\n{model_response}"
+            combined_response = f"{supportive_response}\n{model_response}"
         else:
             combined_response = conversation(user_question)['response']
 
