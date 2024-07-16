@@ -6,6 +6,7 @@ from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
+import random
 
 load_dotenv()
 
