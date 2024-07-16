@@ -56,14 +56,20 @@ def main():
     if user_question:
         # Check if the query is emotional
         if detect_emotional_query(user_question):
-            combined_response = get_supportive_response()
+            supportive_response = get_supportive_response()
+            rag_response = generate_response(user_question)
+            combined_response = f"{supportive_response}\n\nRAG Response:\n{rag_response}"
         else:
-            # Generic response for non-emotional queries
-            combined_response = "I'm here to help with any questions you have. Can you please provide more details?"
-
+            # Generate response using RAG for non-emotional queries
+            rag_response = generate_response(user_question)
+            combined_response = rag_response
+        
         message = {'human': user_question, 'AI': combined_response}
         st.session_state.chat_history.append(message)
         st.write("Chatbot:", combined_response)
+
+if __name__ == "__main__":
+    main()
 
 if __name__ == "__main__":
     main()
