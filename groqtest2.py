@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-groq_api_key = "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"
+groq_api_key = "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"
 
 def detect_emotional_query(query):
     emotional_keywords = [
