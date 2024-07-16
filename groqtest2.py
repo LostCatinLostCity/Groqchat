@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import streamlit as st
 import os
+import random
 from groq import Groq
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
-import random
 
 load_dotenv()
 
@@ -39,8 +39,10 @@ def get_supportive_response():
         "6. Keep a journal to express your thoughts and feelings.",
         "7. Join a support group to connect with others who are going through similar experiences."
     ]
-    support_message = "Please remember that I'm an AI chatbot and not a substitute for professional help."
-    recommendation = "Please contact the national helpline if things get too bad."
+    support_message = "I'm really sorry to hear that you're feeling this way. Please remember that I'm an AI chatbot and not a substitute for professional help."
+    recommendation = "It's important to talk things over with someone who can help."
+    
+    # Randomly choose 5 tips
     selected_tips = random.sample(tips, min(5, len(tips)))
     tips_message = "Here are some things you can try to help you feel better:\n" + "\n".join(selected_tips)
     
@@ -78,7 +80,7 @@ def main():
         if detect_emotional_query(user_question):
             supportive_response = get_supportive_response()
             model_response = conversation(user_question)['response']
-            combined_response = f"{supportive_response} \n\n {model_response}"
+            combined_response = f"{supportive_response}\n\nModel Response:\n{model_response}"
         else:
             combined_response = conversation(user_question)['response']
 
