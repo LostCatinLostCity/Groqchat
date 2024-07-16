@@ -31,16 +31,16 @@ def detect_emotional_query(query):
 
 def get_supportive_response():
     tips = [
-        "1. Talk to a trusted friend or family member about how you're feeling.",
-        "2. Consider seeking help from a mental health professional.",
-        "3. Engage in activities that you enjoy and that make you feel good.",
-        "4. Practice relaxation techniques such as deep breathing or meditation.",
-        "5. Make sure to get enough sleep, eat well, and exercise regularly.",
-        "6. Keep a journal to express your thoughts and feelings.",
-        "7. Join a support group to connect with others who are going through similar experiences."
+        "Talk to a trusted friend or family member about how you're feeling.",
+        "Consider seeking help from a mental health professional.",
+        "Engage in activities that you enjoy and that make you feel good.",
+        "Practice relaxation techniques such as deep breathing or meditation.",
+        "Make sure to get enough sleep, eat well, and exercise regularly.",
+        "Keep a journal to express your thoughts and feelings.",
+        "Join a support group to connect with others who are going through similar experiences."
     ]
-    support_message = "I'm really sorry to hear that you're feeling this way. Please remember that I'm an AI chatbot and not a substitute for professional help."
-    recommendation = "It's important to talk things over with someone who can help."
+    support_message = "Please remember that I'm an AI chatbot and not a substitute for professional help."
+    recommendation = "Please contact the national helpline if things get too bad."
     
     # Randomly choose 5 tips
     selected_tips = random.sample(tips, min(5, len(tips)))
