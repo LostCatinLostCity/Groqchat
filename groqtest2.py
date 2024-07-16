@@ -38,8 +38,8 @@ def get_supportive_response():
         "6. Keep a journal to express your thoughts and feelings.",
         "7. Join a support group to connect with others who are going through similar experiences."
     ]
-    support_message = "I'm really sorry to hear that you're feeling this way. Please remember that I'm an AI chatbot and not a substitute for professional help."
-    recommendation = "It's important to talk things over with someone who can help."
+    support_message = "Please remember that I'm an AI chatbot and not a substitute for professional help."
+    recommendation = "Please contact the national helpline if things get too bad."
     tips_message = "Here are some things you can try to help you feel better:\n" + "\n".join(tips)
     return f"{support_message}\n{recommendation}\n\n{tips_message}"
 
@@ -75,7 +75,7 @@ def main():
         if detect_emotional_query(user_question):
             supportive_response = get_supportive_response()
             model_response = conversation(user_question)['response']
-            combined_response = f"{supportive_response}\n{model_response}"
+            combined_response = f"{supportive_response} \n\n {model_response}"
         else:
             combined_response = conversation(user_question)['response']
 
